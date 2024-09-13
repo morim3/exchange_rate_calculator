@@ -1,8 +1,7 @@
 
-'use client';  // この行を追加
+'use client';
 
 import React, { useState } from 'react';
-import UserCounter from './UserCounter';
 
 interface Rate {
   A: number;
@@ -17,7 +16,7 @@ const CurrencyExchangeCalculator: React.FC = () => {
   const calculateFee = () => {
     const baseFee = baseRate.B / baseRate.A;
     const actualFee = exchangeRate.B / exchangeRate.A;
-    const calculatedFee = (baseFee - actualFee) / baseFee;
+    const calculatedFee = baseFee - actualFee;
     setFee(calculatedFee);
   };
 
@@ -26,7 +25,7 @@ const CurrencyExchangeCalculator: React.FC = () => {
       <h1 className="text-2xl font-bold mb-4">Currency Exchange Fee Calculator</h1>
       <div className="mb-4 text-center">
         <p className="text-lg font-semibold">Formula:</p>
-        <p className="font-mono">Fee = 1 - (B'/A')/(B/A)</p>
+        <p className="font-mono">Fee = (B/A) - (B&apos;/A&apos;)</p>
       </div>
       <div className="mb-4">
         <h2 className="text-lg font-semibold mb-2">Base Rate (A → B)</h2>
@@ -48,7 +47,7 @@ const CurrencyExchangeCalculator: React.FC = () => {
         </div>
       </div>
       <div className="mb-4">
-        <h2 className="text-lg font-semibold mb-2">Exchange Rate (A' → B')</h2>
+        <h2 className="text-lg font-semibold mb-2">Exchange Rate (A&apos; → B&apos;)</h2>
         <div className="flex space-x-2">
           <input
             type="number"
@@ -74,8 +73,8 @@ const CurrencyExchangeCalculator: React.FC = () => {
       </button>
       {fee !== 0 && (
         <div className="mt-4">
-          <h2 className="text-lg font-semibold">Calculated Fee Rate:</h2>
-          <p className="text-xl">{fee.toFixed(6)} </p>
+          <h2 className="text-lg font-semibold">Calculated Fee:</h2>
+          <p className="text-xl">{fee.toFixed(6)}</p>
         </div>
       )}
     </div>
