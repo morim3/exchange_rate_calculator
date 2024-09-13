@@ -30,7 +30,7 @@ const CurrencyExchangeCalculator: React.FC = () => {
         <p className="font-mono text-sm sm:text-base">Fee = 1 - (B&apos;/A&apos;)/(B/A)</p>
       </div>
       <div className="mb-4">
-        <h2 className="text-base sm:text-lg font-semibold mb-2">Base Rate (A -> B)</h2>
+        <h2 className="text-base sm:text-lg font-semibold mb-2">Base Rate (A &rarr; B)</h2>
         <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
           <input
             type="number"
@@ -49,7 +49,7 @@ const CurrencyExchangeCalculator: React.FC = () => {
         </div>
       </div>
       <div className="mb-4">
-        <h2 className="text-base sm:text-lg font-semibold mb-2">Exchange Rate (A&apos; -> B&apos;)</h2>
+        <h2 className="text-base sm:text-lg font-semibold mb-2">Exchange Rate (A&apos; &rarr; B&apos;)</h2>
         <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
           <input
             type="number"
