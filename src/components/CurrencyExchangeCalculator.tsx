@@ -16,7 +16,7 @@ const CurrencyExchangeCalculator: React.FC = () => {
   const calculateFee = () => {
     const baseFee = baseRate.B / baseRate.A;
     const actualFee = exchangeRate.B / exchangeRate.A;
-    const calculatedFee = baseFee - actualFee;
+    const calculatedFee = (baseFee - actualFee)/baseFee;
     setFee(calculatedFee);
   };
 
@@ -25,7 +25,7 @@ const CurrencyExchangeCalculator: React.FC = () => {
       <h1 className="text-2xl font-bold mb-4">Currency Exchange Fee Calculator</h1>
       <div className="mb-4 text-center">
         <p className="text-lg font-semibold">Formula:</p>
-        <p className="font-mono">Fee = (B/A) - (B&apos;/A&apos;)</p>
+        <p className="font-mono">Fee = 1 - (B&apos;/A&apos;)/(B/A)</p>
       </div>
       <div className="mb-4">
         <h2 className="text-lg font-semibold mb-2">Base Rate (A → B)</h2>
